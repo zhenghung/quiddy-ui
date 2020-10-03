@@ -4,8 +4,8 @@ import './index.css';
 import AppRoot from './AppRoot';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <AppRoot />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <AppRoot/>
+    </React.StrictMode>,
+    document.getElementById('root'),
 );
