@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './AppRoot.css';
 import Navbar from './components/Navbar';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
@@ -8,14 +8,16 @@ import Products from './pages/Products';
 import Dashboard from './pages/Dashboard';
 
 function AppRoot() {
+    const [page, setPage] = useState('');
+
     return (
         <Router>
-            <Navbar/>
+            <Navbar page={page}/>
             <Switch>
-                <Route path='/' exact component={Dashboard}/>
-                <Route path='/dashboard' component={Dashboard}/>
-                <Route path='/reports' component={Reports}/>
-                <Route path='/products' component={Products}/>
+                <Route path='/' exact component={() => <Home setPage={setPage}/>}/>
+                <Route path='/dashboard' component={() => <Dashboard setPage={setPage}/>}/>
+                <Route path='/reports' component={() => <Reports setPage={setPage}/>}/>
+                <Route path='/products' component={() => <Products setPage={setPage}/>}/>
             </Switch>
         </Router>
     );

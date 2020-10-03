@@ -70,3 +70,8 @@
 span {
     margin-left: 16px;
 }
+
+.navbar h1 {
+    color: white;
+    margin-left: 1rem;
+}

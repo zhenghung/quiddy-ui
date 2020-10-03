@@ -1,6 +1,10 @@
 import React from 'react';
+import {PageHeader} from '../resources/constants';
 
-function Dashboard() {
+function Dashboard({setPage}) {
+
+    setPage(PageHeader.DASHBOARD);
+
     return (
         <div className='dashboard'>
             <h1>Dashboard</h1>

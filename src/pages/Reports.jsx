@@ -1,6 +1,10 @@
 import React from 'react';
+import {PageHeader} from '../resources/constants';
 
-function Reports() {
+function Reports({setPage}) {
+
+    setPage(PageHeader.REPORTS);
+
     return (
         <div className='reports'>
             <h1>Reports</h1>
