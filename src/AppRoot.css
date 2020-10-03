@@ -8,6 +8,7 @@
 }
 
 .home,
+.dashboard,
 .reports,
 .products {
   display: flex;
