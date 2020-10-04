@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './AppRoot.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './pages/Home';
