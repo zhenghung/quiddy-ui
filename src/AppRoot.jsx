@@ -1,24 +1,26 @@
 import React, {useState} from 'react';
 import './AppRoot.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from './components/Navbar';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Home from './pages/Home';
-import Reports from './pages/Reports';
-import Products from './pages/Products';
 import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
 
 function AppRoot() {
     const [page, setPage] = useState('');
 
+    const redirect = () => {
+        return <Login/>;
+        // return <Dashboard page={page} setPage={setPage}/>;
+    };
+
     return (
         <Router>
-            <Navbar page={page}/>
             <Switch>
-                <Route path='/' exact component={() => <Home setPage={setPage}/>}/>
-                <Route path='/dashboard' component={() => <Dashboard setPage={setPage}/>}/>
-                <Route path='/reports' component={() => <Reports setPage={setPage}/>}/>
-                <Route path='/products' component={() => <Products setPage={setPage}/>}/>
+                <Route path='/' exact component={redirect}/>
+                <Route path='/login' component={() => <Login/>}/>
+                <Route path='/dashboard' component={() => <Dashboard page={page} setPage={setPage}/>}/>
+                <Route path='/spending' component={() => <Dashboard page={page} setPage={setPage}/>}/>
+                {/*<Route path='/logout' component={() => <Dashboard page={page} setPage={setPage}/>}/>*/}
             </Switch>
         </Router>
     );

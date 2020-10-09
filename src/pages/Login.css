@@ -1,0 +1,25 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    background-color: darkslateblue;
+    height: 100vh;
+}
+
+.login h1 {
+    color: darkslateblue;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.login .max-width-600 {
+    max-width: 600px
+}
+
+.login .login-panel {
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.login .container {
+    /*width: auto;*/
+}
